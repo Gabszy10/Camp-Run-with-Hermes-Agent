@@ -8,3 +8,7 @@ Thumbs.db
 *.db-wal
 *.db-shm
 .env
+
+node_modules/
+dist/
+.vercel/
