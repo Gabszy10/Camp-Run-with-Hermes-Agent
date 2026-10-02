@@ -254,15 +254,19 @@ Built for **CAMP / RUN** · Avtica × DEVCON Manila · Powered by [Hermes Agent]
 
 ## Web dashboard
 
-A React/Vite customer-care frontend is included in `frontend/`. It shows real
-sandbox tickets, priority ordering, branch/search filters, order/delivery context,
-CSR workloads, and a copyable investigation prompt for Hermes.
+A React/Vite customer-care frontend is included in `frontend/`, styled with
+Tailwind CSS. Its page, sidebar, metrics, queue, and ticket drawer are separate
+components; ticket formatting and browser-storage helpers live in `src/lib/`.
+It shows sandbox tickets, priority ordering, branch/search filters,
+order/delivery context, CSR workloads, and a copyable investigation prompt for
+Hermes.
 
 ```bash
+cd frontend
 npm install
 npm run dev                # http://localhost:5173
 npm run data:refresh       # refresh the snapshot after changing store.db
-npm run build              # production static site in dist/
+npm run build              # production static site in frontend/dist/
 npm run preview            # preview the production build
 ```
 
@@ -271,8 +275,8 @@ Assignments are demo-only browser storage; they do not change `store.db` or sync
 between users. Hermes investigation is a manual prompt handoff, not a live agent
 connection. The original MCP, skill, and desktop-plugin templates remain separate.
 
-For Vercel, import the repository with its root directory set to the repo root.
-`vercel.json` configures `npm run build` and the `dist` output folder. No model key
+For Vercel, import the repository with its Root Directory set to `frontend`.
+`frontend/vercel.json` configures `npm run build` and the `dist` output folder. No model key
 is needed for the frontend. To support shared persistent assignments, add a hosted
 database and authenticated API. Refresh and commit the snapshot before deployment
 if sandbox data has changed.

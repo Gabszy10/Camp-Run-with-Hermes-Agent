@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "data:refresh": "python3 scripts/export_dashboard.py"
+    "data:refresh": "python3 ../scripts/export_dashboard.py"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -16,6 +16,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
     "vite": "^6.0.0"
   }
 }
